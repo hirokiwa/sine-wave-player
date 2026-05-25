@@ -92,6 +92,12 @@ const clearFrequencyDebounce = () => {
   clearTimeout(getState().frequencyTimeoutId ?? undefined);
 };
 
+const isEditableKeyboardTarget = (target: EventTarget | null) =>
+  target instanceof HTMLInputElement ||
+  target instanceof HTMLTextAreaElement ||
+  target instanceof HTMLSelectElement ||
+  target instanceof HTMLButtonElement;
+
 const createSineWavePlayer = (elements: SineWavePlayerElements) => {
   const stop = () => {
     const state = getState();
@@ -211,6 +217,15 @@ const createSineWavePlayer = (elements: SineWavePlayerElements) => {
     start();
   };
 
+  const togglePlaybackWithSpaceKey = (event: KeyboardEvent) => {
+    if (event.code !== "Space" || isEditableKeyboardTarget(event.target)) {
+      return;
+    }
+
+    event.preventDefault();
+    togglePlayback();
+  };
+
   const debounceFrequencyChange = () => {
     clearFrequencyDebounce();
 
@@ -256,6 +271,7 @@ const createSineWavePlayer = (elements: SineWavePlayerElements) => {
 
   const bindEvents = () => {
     elements.toggleButton.addEventListener("click", togglePlayback);
+    document.addEventListener("keydown", togglePlaybackWithSpaceKey);
     elements.frequencyInput.addEventListener("input", debounceFrequencyChange);
     elements.timerInput.addEventListener("input", applyTimerInputChange);
     elements.frequencyPresetButtons.map((button) =>

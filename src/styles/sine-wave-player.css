@@ -1,0 +1,89 @@
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sine-wave-player {
+  width: 340px;
+  background: var(--color-surface);
+  border-radius: var(--radius-panel);
+  padding: var(--space-extra-large);
+}
+
+.sine-wave-player__title {
+  text-align: center;
+  margin: 0;
+}
+
+.sine-wave-player__field {
+  padding-top: var(--space-large);
+}
+
+.sine-wave-player__label {
+  display: block;
+  padding-bottom: var(--space-small);
+}
+
+.sine-wave-player__input {
+  width: 100%;
+  padding: var(--space-medium);
+  border: none;
+  border-radius: var(--radius-medium);
+  background: var(--color-control);
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+.sine-wave-player__button-row {
+  display: flex;
+  gap: var(--space-medium);
+  padding-top: var(--space-medium);
+}
+
+.sine-wave-player__preset-button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-preset);
+  color: var(--color-text);
+}
+
+.sine-wave-player__toggle-control {
+  padding-top: 22px;
+}
+
+.sine-wave-player__toggle-button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-accent);
+  color: var(--color-dark-text);
+}
+
+.sine-wave-player__toggle-button--playing {
+  background: var(--color-danger);
+  color: var(--color-text);
+}
+
+.sine-wave-player__status {
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.sine-wave-player__status-text {
+  display: block;
+}
+
+.sine-wave-player__timer {
+  display: block;
+  padding-top: var(--space-medium);
+  font-size: 28px;
+  color: var(--color-accent);
+  font-weight: bold;
+}

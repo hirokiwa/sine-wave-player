@@ -1,0 +1,58 @@
+:root {
+  --color-page-background: #111;
+  --color-surface: #1d1d1d;
+  --color-control: #333;
+  --color-preset: #444;
+  --color-text: #fff;
+  --color-accent: #33cc88;
+  --color-danger: #ff5577;
+  --color-dark-text: #000;
+  --font-family-base: sans-serif;
+  --focus-scale: 1.02;
+  --space-small: 8px;
+  --space-medium: 10px;
+  --space-large: 18px;
+  --space-extra-large: 24px;
+  --radius-medium: 8px;
+  --radius-large: 10px;
+  --radius-panel: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-page-background);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  margin: 0;
+}
+
+button {
+  border: none;
+  border-radius: var(--radius-large);
+  padding: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition:
+    scale 160ms ease,
+    filter 160ms ease;
+}
+
+button:hover,
+button:focus {
+  scale: var(--focus-scale);
+}
+
+@media (any-hover: none) {
+  button:hover {
+    scale: 1;
+    filter: none;
+  }
+}

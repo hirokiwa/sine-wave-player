@@ -15,44 +15,54 @@
         <h1 class="sine-wave-player__title" id="sine-wave-player-title">Sine Wave Player</h1>
 
         <div class="sine-wave-player__field">
-          <label class="sine-wave-player__label" for="frequency-input">Frequency (Hz)</label>
+          <label class="sine-wave-player__label" for="frequency-input">
+            <svg class="sine-wave-player__label-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h4v-8H5v-1c0-3.87 3.13-7 7-7s7 3.13 7 7v1h-4v8h4c1.1 0 2-.9 2-2v-7a9 9 0 0 0-9-9z" />
+            </svg>
+            <span>Frequency (Hz)</span>
+          </label>
           <input class="sine-wave-player__input" id="frequency-input" type="number" value="35" min="1" max="200" />
         </div>
 
         <div class="sine-wave-player__button-row" aria-label="Frequency presets">
           <button class="sine-wave-player__preset-button" type="button" data-frequency="35">
-            <span aria-hidden="true">~</span>
             <span>35Hz</span>
           </button>
           <button class="sine-wave-player__preset-button" type="button" data-frequency="40">
-            <span aria-hidden="true">~</span>
             <span>40Hz</span>
           </button>
         </div>
 
         <div class="sine-wave-player__field">
-          <label class="sine-wave-player__label" for="timer-input">Timer (minute)</label>
+          <label class="sine-wave-player__label" for="timer-input">
+            <svg class="sine-wave-player__label-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 1h6v2H9zm10.03 6.39 1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42A8.962 8.962 0 0 0 12 4a9 9 0 0 0-9 9c0 4.97 4.02 9 9 9a8.994 8.994 0 0 0 7.03-14.61zM13 14h-2V8h2v6z" />
+            </svg>
+            <span>Timer (minute)</span>
+          </label>
           <input class="sine-wave-player__input" id="timer-input" type="number" placeholder="Leave blank for unlimited playback." />
         </div>
 
         <div class="sine-wave-player__button-row" aria-label="Timer presets">
           <button class="sine-wave-player__preset-button" type="button" data-timer="30">
-            <span aria-hidden="true">◷</span>
             <span>30 min</span>
           </button>
           <button class="sine-wave-player__preset-button" type="button" data-timer="60">
-            <span aria-hidden="true">◷</span>
             <span>60 min</span>
           </button>
           <button class="sine-wave-player__preset-button" type="button" data-timer="infinite">
-            <span aria-hidden="true">∞</span>
             <span>∞</span>
           </button>
         </div>
 
         <div class="sine-wave-player__toggle-control">
           <button class="sine-wave-player__toggle-button" id="toggle-button" type="button">
-            <span class="sine-wave-player__toggle-icon" aria-hidden="true">▶</span>
+            <svg class="sine-wave-player__toggle-icon sine-wave-player__toggle-icon--play" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg class="sine-wave-player__toggle-icon sine-wave-player__toggle-icon--stop sine-wave-player__toggle-icon--hidden" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6h12v12H6z" />
+            </svg>
             <span class="sine-wave-player__toggle-label">Play</span>
           </button>
         </div>

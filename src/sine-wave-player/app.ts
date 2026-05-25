@@ -26,7 +26,8 @@ type SineWavePlayerElements = {
   readonly frequencyInput: HTMLInputElement;
   readonly timerInput: HTMLInputElement;
   readonly toggleButton: HTMLButtonElement;
-  readonly toggleIcon: HTMLSpanElement;
+  readonly playIcon: SVGSVGElement;
+  readonly stopIcon: SVGSVGElement;
   readonly toggleLabel: HTMLSpanElement;
   readonly statusText: HTMLSpanElement;
   readonly countdownText: HTMLSpanElement;
@@ -38,7 +39,8 @@ const getElements = () => ({
   frequencyInput: getRequiredElementById<HTMLInputElement>("frequency-input"),
   timerInput: getRequiredElementById<HTMLInputElement>("timer-input"),
   toggleButton: getRequiredElementById<HTMLButtonElement>("toggle-button"),
-  toggleIcon: queryRequired<HTMLSpanElement>(".sine-wave-player__toggle-icon"),
+  playIcon: queryRequired<SVGSVGElement>(".sine-wave-player__toggle-icon--play"),
+  stopIcon: queryRequired<SVGSVGElement>(".sine-wave-player__toggle-icon--stop"),
   toggleLabel: queryRequired<HTMLSpanElement>(".sine-wave-player__toggle-label"),
   statusText: getRequiredElementById<HTMLSpanElement>("status-text"),
   countdownText: getRequiredElementById<HTMLSpanElement>("countdown-text"),
@@ -57,7 +59,8 @@ const renderStopped = (elements: SineWavePlayerElements) => {
   setText({ element: elements.countdownText, text: INFINITE_TIME_LABEL });
   setToggleButton({
     button: elements.toggleButton,
-    icon: elements.toggleIcon,
+    playIcon: elements.playIcon,
+    stopIcon: elements.stopIcon,
     label: elements.toggleLabel,
     playing: false,
   });
@@ -74,7 +77,8 @@ const renderPlaying = ({
   setText({ element: elements.statusText, text: `${frequency}Hz playback` });
   setToggleButton({
     button: elements.toggleButton,
-    icon: elements.toggleIcon,
+    playIcon: elements.playIcon,
+    stopIcon: elements.stopIcon,
     label: elements.toggleLabel,
     playing: true,
   });

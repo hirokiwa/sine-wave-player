@@ -26,16 +26,19 @@ export const resetTitle = () => {
 
 export const setToggleButton = ({
   button,
-  icon,
+  playIcon,
+  stopIcon,
   label,
   playing,
 }: {
   readonly button: HTMLButtonElement;
-  readonly icon: HTMLSpanElement;
+  readonly playIcon: SVGSVGElement;
+  readonly stopIcon: SVGSVGElement;
   readonly label: HTMLSpanElement;
   readonly playing: boolean;
 }) => {
-  icon.textContent = playing ? "■" : "▶";
+  playIcon.classList.toggle("sine-wave-player__toggle-icon--hidden", playing);
+  stopIcon.classList.toggle("sine-wave-player__toggle-icon--hidden", !playing);
   label.textContent = playing ? "Stop" : "Play";
   button.classList.toggle("sine-wave-player__toggle-button--playing", playing);
 };
